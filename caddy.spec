@@ -30,8 +30,8 @@
 %global commit_realip 5dd1f4047d0f649f21ba9f8d7e491d712be9a5b0
 
 Name: caddy
-Version: 0.10.9
-Release: 4%{?dist}
+Version: 0.10.10
+Release: 5%{?dist}
 Summary: HTTP/2 web server with automatic HTTPS
 License: ASL 2.0 and MIT
 URL: https://caddyserver.com
@@ -42,7 +42,7 @@ Source3: https://%{import_path_realip}/archive/%{commit_realip}/realip-%{commit_
 Source10: caddy.conf
 Source11: caddy.service
 Source12: index.html
-Patch0: 0001-Remove-Caddy-Sponsors-header.patch
+#Patch0: 0001-Remove-Caddy-Sponsors-header.patch
 ExclusiveArch: %{go_arches}
 # fails to build on s390x
 ExcludeArch: s390x
@@ -144,6 +144,9 @@ setcap cap_net_bind_service=+ep %{_bindir}/caddy
 
 
 %changelog
+* Wed Oct 25 2017 Amit Bakshi <ambakshi@gmail.com> - 0.10.10.5
+- Update bits
+
 * Mon Sep 18 2017 Carl George <carl@george.computer> - 0.10.9-4
 - Exclude s390x
 
